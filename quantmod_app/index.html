@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quantmod App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Quantmod App">
+  <meta name="author" content="R V">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Quantmod App</h1>
+    <h2>Quantmod App</h2>
+    <p>R V<br/>IT</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Quantmod App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Quantmod means &quot;Quantitative Financial Modelling &amp; Trading Framework for R&quot;</p>
+
+<p>The quantmod package for R is designed to assist the quantitative trader in the development, 
+testing, and deployment of statistically based trading models.</p>
+
+<p>This is a simple app showing the basic data handling functions you can do with the 
+quantmod data.</p>
+
+<p>Link of the app:</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Input and Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app requires the following inputs -- </p>
+
+<ol>
+<li>Choose source: Yahoo, Google, FRED, oanda. </li>
+<li>Input ticker/symbol. </li>
+<li>Choose if you want to show the bargraph of the closing price. 
+For example: &quot;GOOG&quot; from yahoo</li>
+</ol>
+
+<p>It will give you the following - </p>
+
+<ol>
+<li>as of Date of the data being shown</li>
+<li>OHLC Data : Open, Series High, Series Low, Close, Volume </li>
+<li>Graph of the Close data</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Code</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">sym &lt;- getSymbols(&quot;GOOG&quot;, src = &quot;yahoo&quot;, auto.assign = FALSE)
+</code></pre>
+
+<pre><code class="r">out_date &lt;- index(last(sym))
+out_Op &lt;- coredata(last(Op(sym)))[1]
+out_Hi &lt;- coredata(last(Hi(sym)))[1]
+out_Lo &lt;- coredata(last(Lo(sym)))[1]
+out_Cl &lt;- coredata(last(Cl(sym)))[1]
+out_Vo &lt;- coredata(last(Vo(sym)))[1]
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>as of Date</p>
+
+<pre><code>## [1] &quot;2015-06-19&quot;
+</code></pre>
+
+<p>Open</p>
+
+<pre><code>## [1] 537.21
+</code></pre>
+
+<p>High</p>
+
+<pre><code>## [1] 538.25
+</code></pre>
+
+<p>Low</p>
+
+<pre><code>## [1] 533.01
+</code></pre>
+
+<p>Close</p>
+
+<pre><code>## [1] 536.69
+</code></pre>
+
+<p>Volume</p>
+
+<pre><code>## [1] 1885700
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Caveat: Errors and Further Improvement</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>The app gives an error when the symbol entered is not a valid symbol. </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Quantmod App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Input and Output'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Code'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Output'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Caveat: Errors and Further Improvement'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
