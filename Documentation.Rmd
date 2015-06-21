@@ -1,0 +1,35 @@
+---
+title: "Quantmod App Documentation"
+output: html_document
+---
+
+## Quantmod App
+
+Quantmod means "Quantitative Financial Modelling & Trading Framework for R"
+
+The quantmod package for R is designed to assist the quantitative trader in the development, 
+testing, and deployment of statistically based trading models.
+
+This is a simple app showing the basic data handling functions you can do with the 
+quantmod data.
+
+Link of the app: https://vinasr.shinyapps.io/DataProd
+
+Input and Output
+
+The app requires the following inputs -- 
+
+1. Choose source: Yahoo, Google, FRED, oanda. 
+2. Input a valid ticker/symbol. 
+3. Choose if you want to show the bargraph of the closing price. 
+For example: "GOOG" from yahoo
+
+It will give you the following - 
+
+1. as of Date of the data being shown
+2. OHLC Data : Open, Series High, Series Low, Close, Volume 
+3. Graph of the Close data
+
+Caveat: Errors and Further Improvement
+
+1. The app gives an error when the symbol entered is not a valid symbol. 

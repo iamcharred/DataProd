@@ -8,7 +8,7 @@ shinyServer(function(input, output) {
         sym <- reactive({
             getSymbols(input$in_symbol, src = input$in_source, auto.assign = FALSE)
             })
-        output$out_date <- renderText({if (input$goButton > 0) { mdy(index(last(sym())))}})
+        output$out_date <- renderText({if (input$goButton > 0) { format(index(last(sym())), "%x")}})
         output$out_Op <- renderText({if (input$goButton > 0) { coredata(last(Op(sym())))[1]}})
         output$out_Hi <- renderText({if (input$goButton > 0) { coredata(last(Hi(sym())))[1]}})
         output$out_Lo <- renderText({if (input$goButton > 0) { coredata(last(Lo(sym())))[1]}})
